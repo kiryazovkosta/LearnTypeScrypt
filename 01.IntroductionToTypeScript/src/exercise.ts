@@ -14,10 +14,7 @@ export class Exercises {
             Sunday = 7
         }
 
-        if (day >= WeekDays.Monday && day <= WeekDays.Sunday) {
-            return WeekDays[day];
-        }
-
-        return 'error'
+        const dayName = WeekDays[day];
+        return dayName !== undefined ? dayName : 'error';
     }
 } 
