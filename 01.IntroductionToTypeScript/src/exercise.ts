@@ -51,6 +51,38 @@ export class Exercises {
 
         const dayNumber: WeekDays | undefined = WeekDays[day as keyof typeof WeekDays];
         return dayNumber !== undefined ? dayNumber : 'error';
+    }
 
+    unknownRespons(response: unknown): string {
+        return typeof(response as any).value === "string" ? (response as any).value : '-';
+    }
+
+    isNonEmptyStringArray(arr: unknown): boolean {
+        if (//Array.isArray(arr) 
+            arr instanceof Array
+            && arr.length > 0 
+            && arr.every(item => typeof item === 'string')) {
+                return true;
+        }
+
+        return false;
+    }
+
+    friday13(dates: unknown[]): string {
+        const DAY13: number = 13;
+        const FRIDAY: number = 5;
+        
+        let validDates: string[] = Array<string>();
+        
+        dates.forEach(element => {
+            if (element instanceof Date 
+                && element.getDate() === DAY13 
+                && element.getDay() == FRIDAY) {
+                    const month = element.toLocaleString(undefined, { month: 'long' });
+                    validDates.push(`${DAY13}-${month}-${element.getFullYear()}`)
+            }
+        });
+
+        return validDates.join('\n');
     }
 } 
