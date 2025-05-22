@@ -1,19 +1,19 @@
-type Part = {
+export type Part = {
     partName: string,
     runDiagnostics: () => string;
 }
 
-type CarBody = { 
+export type CarBody = { 
     material: string, 
     state: string 
 } & Part;
 
-type Tires = { 
+export type Tires = { 
     airPressure: number, 
     condition: string 
 } & Part;
 
-type Engine = { 
+export type Engine = { 
     horsepower: number, 
     oilDensity: number 
 } & Part;
@@ -22,7 +22,7 @@ export const carDiagnostics = (
     carBody: CarBody,
     tires: Tires,
     engine: Engine
-) => {
+): void => {
     console.log(carBody.runDiagnostics())
     console.log(tires.runDiagnostics())
     console.log(engine.runDiagnostics())

@@ -4,18 +4,18 @@ export const operator = (
     operand: number
 ): number|string|undefined => {
     if (operation === "Index" 
-        && (Array.isArray(param) || typeof param === "string") 
+        && typeof param !== "number" 
         && param.length -1 >= operand) {
             return param[operand];
     }
 
     if (operation === "Length" 
-        && (typeof param === "string" || Array.isArray(param))) {
+        && typeof param !== "number") {
             return param.length % operand;
     }
 
     if (operation === "Add" 
-        && (typeof param === "string" || typeof param === "number")) {
+        && !Array.isArray(param)) {
             return (Number(param) || 0) + operand;
     }
 }

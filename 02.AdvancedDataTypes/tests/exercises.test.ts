@@ -12,31 +12,31 @@ describe('add()', () => {
 
 
 describe('1. Optional Multiplier', () => {
-    it('When there are string numbers as input arguments should returns multiplication', () => {
+    it('Test case 1', () => {
         expect(optionalMultiplier('3', '5', '10')).toBe(150)
     })
 
-    it('When there are mixed numbers as input arguments should returns multiplication', () => {
+    it('Test case 2', () => {
         expect(optionalMultiplier('3', 5, '10')).toBe(150)
     })
 
-    it('When there are mixed numbers as input arguments should returns multiplication', () => {
+    it('Test case 3', () => {
         expect(optionalMultiplier('2','2')).toBe(4)
     })
 
-    it('When there are mixed numbers as input arguments should returns multiplication', () => {
+    it('Test case 4', () => {
         expect(optionalMultiplier(undefined, 2, 3)).toBe(6)
     })
 
-    it('When there are mixed numbers as input arguments should returns multiplication', () => {
+    it('Test case 5', () => {
         expect(optionalMultiplier(7, undefined, '2')).toBe(14)
     })
 
-    it('When there are mixed numbers as input arguments should returns multiplication', () => {
+    it('Test case 6', () => {
         expect(optionalMultiplier(undefined, undefined, 5)).toBe(5)
     })
     
-    it('When there are no input arguments should returns one', () => {
+    it('Test case 7', () => {
         expect(optionalMultiplier()).toBe(1)
     })
 })
