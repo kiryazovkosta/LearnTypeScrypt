@@ -3,9 +3,9 @@ function greeting(name: string): string {
 }
 
 function LogClass(target: Function) {
-    console.log("======================================");
+    //console.log("======================================");
     console.log(`${typeof target} has been created. ${target.name}`);
-    console.log("======================================");
+    //console.log("======================================");
 }
 
 function LogAccessor(
@@ -13,9 +13,9 @@ function LogAccessor(
     propertyKey: string,
     descriptor: PropertyDescriptor
 ) {
-    console.log("======================================");
+    //console.log("======================================");
     console.log(`${propertyKey} accessor has been created.`);
-    console.log("======================================");
+    //console.log("======================================");
 }
 
 function LogMethod(
@@ -23,18 +23,18 @@ function LogMethod(
     propertyKey: string,
     descriptor: PropertyDescriptor
 ) {
-    console.log("======================================");
+    //console.log("======================================");
     console.log("LogMethod has been created.");
-    console.log("======================================");
+    //console.log("======================================");
 }
 
 function LogProperty(
     target: any,
     propertyKey: string
 ) {
-    console.log("======================================");
+    //console.log("======================================");
     console.log("LogProperty has been created.");
-    console.log("======================================");
+    //console.log("======================================");
 }
 
 function LogParameter(
@@ -42,16 +42,16 @@ function LogParameter(
     methodName: string,
     parameterIndex: number
 ) {
-    console.log("======================================");
+    //console.log("======================================");
     console.log(`${methodName} method's parameter at index ${parameterIndex} has been created.`);
-    console.log("======================================");
+    //console.log("======================================");
 }
 
 function FreezeClass(construction: Function) {
-    console.log("======================================");
+   // console.log("======================================");
     console.log(`${construction.name} class has been frozen.`);
     Object.freeze(construction);
-    console.log("======================================");
+    //console.log("======================================");
 }
 
 //@LogClass
@@ -85,4 +85,4 @@ class User {
     }       
 }
 
-export { greeting, User }
+export { greeting }
